@@ -1,0 +1,638 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+html{font-size: 10px;}
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard-Regular';}
+table{border-collapse: collapse; width: 100%;}
+ol, ul{list-style: none;}
+a{text-decoration: none !important; color: #000;}
+address, em{font-style: normal;}
+caption , legend{display: none;}
+select, input, fieldset, button{border: 0; outline: none; vertical-align: top;}
+img{vertical-align: top; border: 0;}
+
+
+:root{
+  --main-font : "Pretendard-Regular", sans-serif;
+  --main-1 : #5B9CFF;
+  --main-2 : #84AFFF;
+  --main-3 : #A9C7FF;
+  --main-4 : #CEE2FF;
+  --main-5 : #E0EBFF;
+  --main-6 : #EFF8FF;
+  --grayscale-1 : #101010;
+  --grayscale-2 : #252525;
+  --grayscale-3 : #454545;
+  --grayscale-4 : #5D5F62;
+  --grayscale-5 : #83878B;
+  --grayscale-6 : #9CA2A8;
+  --grayscale-7 : #BAC0C5;
+  --grayscale-8 : #D5D9DD;
+  --grayscale-9 : #E5EAEF;
+  --grayscale-10 : #F0F3F6;
+  --white : #fff;
+  --mainfont-color: #2079ff;
+  --bg-color : #F6FAFD;
+  --main-gradi : linear-gradient(90deg,rgba(124, 176, 255, 1) 0%, rgba(87, 154, 255, 1) 100%);
+}
+/*공통*/
+
+/*헤더
+ header 는 공통사항이고, 상황에 맞게 head1, head2, head3 클래스를 사용하세요.
+*/
+header{
+  min-width: 320px; 
+  max-width: 720px;
+  height: 95px;
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  background-color: var(--white);
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--grayscale-10);
+}
+header h1{
+  font-size: 25px;
+  font-weight: 600;
+}
+.head1 ul, .head2 ul{
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  padding-left:5%;
+}
+.head1 ul img{
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+  margin-right: 4px;
+}
+.head3 ul{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.head3 .head-util{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.head3 .head-util .bi{
+  font-size: 2.2rem;
+  color: var(--grayscale-2);
+}
+
+
+/*여기는 가능하면 손 안댈게요*/
+[class^="content-"]{
+  width: 100%;
+  min-width: 320px;  
+  max-width: 720px; 
+  background-color: var(--white);
+  position: absolute;
+  top: 95px;
+  padding-bottom: 150px;
+} 
+[class^="content-"] > .inner{
+  width: 100%;
+  padding: 20px 5%;
+} 
+[class^="content-"] .inner h2{
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  color: var(--grayscale-3);
+}
+
+
+/*인풋박스*/
+::placeholder{
+  color: var(--grayscale-6);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+fieldset{
+  margin-bottom: 20px;
+  width: 100%;
+}
+fieldset input[type="text"]{
+  width: 100%;
+  height: 48px;
+  padding: 0 3%;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--grayscale-2);
+  background-color: var(--grayscale-10);
+  border-radius: 8px;
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+fieldset p{
+  font-size: 1.4rem;
+  color: var(--grayscale-6);
+}
+fieldset p .bi{
+  font-size: 1.4rem;
+  color: var(--grayscale-7);
+  margin-right: 4px;
+}
+
+/*아이콘이 있는 인풋*/
+.field02 .input-icon{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.field02 .input-icon input[type="text"]{
+  width: 100%;
+  height: 48px; 
+  padding: 0 3%;
+  font-size: 1.8rem;
+  padding-right: 40px; /*아이콘 크기에 맞게 조정*/
+}
+.field02 .input-icon span{
+  position: absolute;
+  bottom: -16%;
+  right: 5%; /*아이콘 위치 조정*/
+  transform: translateY(-50%);
+  font-size: 2.2rem;
+  color: var(--grayscale-2);
+  cursor: pointer;
+}
+
+
+/*전송 버튼 있는 인풋*/
+.field03 .input-btn{
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+.field03 .input-btn input[type="text"]{
+  width: calc(75%); /*버튼 크기에 맞게 조정*/
+  height: 48px;
+  padding: 0 3%;
+  font-size: 1.8rem;
+}
+.field03 .input-btn .btn-submit{
+  width: 22%;
+  height: 48px;
+  background-color: var(--main-5);
+  color: #4C93FF;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 48px; /*버튼 높이에 맞게 조정*/
+  margin-top: 3px;
+}
+
+/*버튼 제일 큰거*/
+[class^="btn-big-"]{
+  width: 100%;
+  height: 48px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 48px; /*버튼 높이에 맞게 조정*/
+  margin-bottom: 12px;
+}
+.btn-big-01{
+  background-color: var(--main-1);
+  color: var(--white);
+}
+
+.btn-big-02{
+  background-color: var(--main-5);
+  color: #4C93FF;
+}
+
+.btn-midbox{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+} 
+.btn-midbox > button{
+  width: calc(50% - 12px); /*두 개 버튼의 간격을 고려하여 계산*/
+  height: 48px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 48px; /*버튼 높이에 맞게 조정*/
+}
+.btn-midbox .btn-mid-01{
+  background-color: var(--main-5);
+  color: #4C93FF;
+}
+.btn-midbox .btn-mid-02{
+  background-color: var(--main-1);
+  color: var(--white);
+}
+
+
+
+/*모달*/
+.modal-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 998;
+}
+.modal-wrap .modal-box{
+  width: 100%;
+  height: 400px;
+  border-radius: 20px 20px 0 0;
+  background-color: var(--white);
+  position: relative;
+}
+.modal-wrap .modal-box .modal-inner{
+  padding: 5%;
+  text-align: center;
+}
+.modal-wrap .modal-box ul{
+  padding: 3% 5%;
+}
+.modal-wrap .modal-box ul li{
+  font-size: 2rem;
+  margin-bottom: 4px;
+  padding: 2%;
+  cursor: pointer;
+}
+.modal-wrap .modal-box ul li.active{
+  background-color: rgba(91, 156, 255, 0.12) ;
+  border-radius: 4px;
+}
+.modal-wrap .modal-box .btn-close{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.logowrap{
+  margin-top: 170px;
+  margin-bottom: 45px;
+}
+.logowrap p{
+  font-size: 1.8rem;
+  color: var(--grayscale-4);
+  font-weight: 500;
+  padding-bottom: 25px;
+}
+.logowrap .logob img{
+   width: 170px;
+   object-fit: cover;
+}
+
+.login-icon{
+  margin-top: -7px;
+}
+
+.login-btn-top{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 47px;
+  margin-top: 8px;
+}
+.login-btn-top a{
+  font-size: 1.4rem;
+  color: var(--grayscale-6);
+}
+.login-btn-top div{
+  display: flex;
+}
+.login-btn-top div a{
+  padding: 0 10px;
+}
+.login-btn-top div a:first-child{
+  position: relative;
+}
+.login-btn-top div a:first-child::after{
+  content: "";
+  display: block;
+  width: 1.5px;
+  height: 16px;
+  background-color: var(--grayscale-8);
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+.login-btn-top div a:last-child{
+  padding-right: 0;
+}
+
+
+.signform{
+  padding-top: 80px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+fieldset{
+  text-align: left;
+
+}
+
+.signform .field03 h2, .signform .field02 h2{
+  font-size: 2.0rem !important;
+  font-weight: 600 !important;
+  color: var(--grayscale-3);
+  text-align: left;
+  margin-top: 20px;
+}
+.signform .field03 p, .signform .field02 p{
+  margin-top: 10px;
+}
+.signform .field03 p img, .signform .field02 p img{
+  margin-right: 5px;
+}
+
+input[type="checkbox"]{
+  appearance: none;
+}
+input[type="checkbox"] + label::before{
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(./assets/icon-check-gray.svg) no-repeat center;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 10%;;
+} 
+input[type="checkbox"]:checked + label::before{
+  background: url(./assets/icon-check-blue.svg) no-repeat center;
+}
+input[type="checkbox"] + label{
+  position: relative;
+  padding: 0 28px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--grayscale-5);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+input[type="checkbox"]:checked + label{
+  color: var(--main-1);
+}
+
+
+
+/* 회원가입 성별 선택 */
+.signup-gender-tit{
+  font-size: 2.5rem;
+  margin-top: 185px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: var(--grayscale-2);
+}
+.signup-gender{
+  display: flex;
+  justify-content: space-between;
+}
+.signup-gender div{
+  width: 48%;
+  border: 2px solid var(--grayscale-7);
+  border-radius: 15px;
+  padding-top: 27px;
+} 
+.signup-gender div img{
+  width: 100px;
+}
+.signup-gender div p{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--grayscale-6);
+  margin-top: 26px;
+  padding-bottom: 7px;
+}
+
+.gender-btn{
+  position: absolute;
+  bottom: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+
+
+.gender-option {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease, color 0.3s ease;
+}
+
+/* 선택 상태 */
+.gender-option.selected {
+  border-color: var(--main-1);
+  background-color: var(--main-6);
+}
+
+/* 선택 상태일 때 p 태그 글씨 색 */
+.gender-option.selected p {
+  color: var(--main-1);
+}
+
+
+.sign-schedule-tit{
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--grayscale-2);
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.sign-schedule-subtit{
+  font-size: 1.8rem;
+  color: var(--grayscale-4);
+  text-align: left;
+  font-weight: 500;
+}
+
+.signupillust1{
+  width: 85%;
+  margin: 30px 0 0 -40px;
+}
+
+.signupillust2{
+  width: 85%;
+  margin: 30px 0 0 -10px;
+}
+
+.schedule-btn-wrap{
+  position: absolute;
+  bottom: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+
+.sign-man{
+  width: 130px;
+  height: 130px;
+  border-radius: 500px;
+  background-color: #FFFDE6;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 35px;
+}
+.sign-man img{
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.s-brt{
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  color: var(--grayscale-3);
+  margin-top: 20px;
+}
+.b-close{
+  margin-top: -10px;
+}
+
+.s-close{
+  margin-top: -27px;
+}
+
+
+.tit-roading{
+  font-size: 1.8rem;
+  color: #fff
+}
+img.logo-roading{
+  width: 170px;
+}
+.tit-roading{
+  margin-top: -70px;
+}
+
+.loading-wrap{
+  width: 390px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loading-wrap .inner{
+  padding: 20px 5% !important;
+} 
+
+.loading-wrap .swiper-on p{
+  padding-bottom: 50px;
+}
+.loading-wrap .swiper-on img{
+  width: 80%;
+}
+.onboarding-s-custom .swiper-pagination {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.onboarding-s-custom {
+  /*height: 600px;  또는 필요에 따라 고정값도 가능 */
+  position: relative;
+}
+
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+  background-color: var(--main-1);
+}
+
+
+.gosignupbtn{
+  width:350px;
+  position: fixed;
+  bottom: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.sign-call-check{
+  margin-top: 10px;
+}
+
+.custom-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--grayscale-4);
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.custom-radio input[type="radio"] {
+  display: none;
+}
+
+.radio-mark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--grayscale-6);
+  border-radius: 50%; /* 원형 */
+  margin-right: 0.5rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.custom-radio input[type="radio"]:checked + .radio-mark::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--main-1); /* 체크 색상 */
+  border-radius: 50%; /* 안쪽 원형 체크 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.signform input[type="checkbox"] + label{
+  left: 0;
+  position: absolute;
+  margin-top: 60px;
+}
+
+
+.btn-login{
+  display: block;
+  margin-top: 20px;
+  width:350px;
+}
